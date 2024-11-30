@@ -7,6 +7,8 @@
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Seeing Far and Clearly: Mitigating Hallucinations in MLLMs with Attention Causal Decoding</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -258,7 +260,7 @@
       </div>
       </div>
 
-   <section class="section" style="margin-top: -2.6rem;">
+<!--    <section class="section" style="margin-top: -2.6rem;">
   <figure class="image is-centered" style="width: 80%; margin: 0 auto 1rem; text-align: center;">
     <img 
       src="./static/images/method.png" 
@@ -267,8 +269,22 @@
       loading="lazy"
     />
     <figcaption style="text-align: center;">
-      The scheme of the proposed **FarSight** strategy, which integrates with the **softmax** operation, replaces the traditional causal mask. Specifically, the attention score matrix `ω` is cleared of attention values in the upper triangular part, then register-attention scores are added using the matrix `P`, followed by the softmax computation. `P` has a linear decay in the upper triangular part and zeros in the lower triangular part. After the softmax operation, the remaining attention probabilities in the upper triangular part are cleared to ensure the causal decoding property is preserved.
+      The scheme of the proposed FarSight strategy, which integrates with the softmax operation, replaces the traditional causal mask. Specifically, the attention score matrix ω is cleared of attention values in the upper triangular part, then register-attention scores are added using the matrix P, followed by the softmax computation. P has a linear decay in the upper triangular part and zeros in the lower triangular part. After the softmax operation, the remaining attention probabilities in the upper triangular part are cleared to ensure the causal decoding property is preserved.
 
+    </figcaption>
+  </figure>
+</section> -->
+
+  <section class="section" style="margin-top: -2.6rem;">
+  <figure class="image is-centered" style="width: 80%; margin: 0 auto 1rem; text-align: center;">
+    <img 
+      src="./static/images/method.png" 
+      alt="image" 
+      style="width: 100%; height: auto;" 
+      loading="lazy"
+    />
+    <figcaption style="text-align: center;">
+      The scheme of the proposed <strong>FarSight</strong> strategy, which integrates with the <strong>softmax</strong> operation, replaces the traditional causal mask. Specifically, the attention score matrix \( \omega \) is cleared of attention values in the upper triangular part, then register-attention scores are added using the matrix \( \mathcal{P} \), followed by the softmax computation. \( \mathcal{P} \) has a linear decay in the upper triangular part and zeros in the lower triangular part. After the softmax operation, the remaining attention probabilities in the upper triangular part are cleared to ensure the causal decoding property is preserved.
     </figcaption>
   </figure>
 </section>
