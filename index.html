@@ -224,6 +224,20 @@
   </div>
 </section>
 
+<section class="section" style="margin-top: -2.6rem;">
+  <figure class="image is-centered" style="width: 80%; margin: 0 auto 1rem; text-align: center;">
+    <img 
+      src="./static/images/intro.png" 
+      alt="image" 
+      style="width: 100%; height: auto;" 
+      loading="lazy"
+    />
+    <figcaption style="text-align: center;">
+      (a): Attention Collapse in MLLMs: Outlier tokens from different modalities are assigned disproportionately high attention scores, hindering interaction between relevant tokens. (b): Positional Information Decay: As text generation progresses, attention to visual information gradually diminishes. (c): Our FarSight, as a plug-in, mitigates these issues by effectively reducing attention interference from outlier tokens and improving response accuracy.
+    </figcaption>
+  </figure>
+</section>
+
  <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -243,6 +257,21 @@
       </div>
       </div>
 
+   <section class="section" style="margin-top: -2.6rem;">
+  <figure class="image is-centered" style="width: 80%; margin: 0 auto 1rem; text-align: center;">
+    <img 
+      src="./static/images/method.png" 
+      alt="image" 
+      style="width: 100%; height: auto;" 
+      loading="lazy"
+    />
+    <figcaption style="text-align: center;">
+      The scheme of the proposed **FarSight** strategy, which integrates with the **softmax** operation, replaces the traditional causal mask. Specifically, the attention score matrix \( \omega \) is cleared of attention values in the upper triangular part, then register-attention scores are added using the matrix \( \mathcal{P} \), followed by the softmax computation. \( \mathcal{P} \) has a linear decay in the upper triangular part and zeros in the lower triangular part. After the softmax operation, the remaining attention probabilities in the upper triangular part are cleared to ensure the causal decoding property is preserved.
+    </figcaption>
+  </figure>
+</section>
+
+
 
    <div class="columns is-centered has-text-centered" style="margin-top: 0rem;">
   <div class="column is-four-fifths">
@@ -253,13 +282,13 @@
 <section class="section" style="margin-top: -2.6rem;">
   <figure class="image is-centered" style="width: 80%; margin: 0 auto 1rem; text-align: center;">
     <img 
-      src="./static/table1.png" 
+      src="./static/images/exp.png" 
       alt="image" 
       style="width: 100%; height: auto;" 
       loading="lazy"
     />
     <figcaption style="text-align: center;">
-      Table 1. Accuracy of MLLMs under instruction following setting. All of the MLLMs struggle to respond with safety awareness under unsafe situations and perform even worse in Embodied Task.
+     Qualitative Visualization of FarSight in Image Understanding Task on LLaVA-1.5. (a) Comparison of the average attention allocation to images during text generation among Base (Vanilla MLLMs), EDVT and our FarSight; (b) Visual attention decay across different methods within the generation of 60 text tokens; (c) FarSight's attention distribution on images under varying decay rat $\sigma$. More detailed visualizations of images and videos are provided in Appendix F.
     </figcaption>
   </figure>
 </section>
