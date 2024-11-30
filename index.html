@@ -231,18 +231,47 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-           Multimodal Large Language Models (MLLMs) are rapidly evolving, demonstrating impressive capabilities as multimodal assistants that interact with both humans and their environments. However, this increased sophistication introduces significant safety concerns. In this paper, we present the first evaluation and analysis of a novel safety challenge termed Multimodal Situational Safety, which explores how safety considerations vary based on the specific situation in which the user or agent is engaged. 
-            We argue that for an MLLM to respond safely—whether through language or action—it often needs to assess the safety implications of a language query within its corresponding visual context. To evaluate this capability, we develop the Multimodal Situational Safety benchmark (MSSBench) to assess the situational safety performance of current MLLMs. 
-The dataset comprises 1,820 language query-image pairs, half of which the image context is safe, and the other half is unsafe. 
-We also develop an evaluation framework that analyzes key safety aspects, including explicit safety reasoning, visual understanding, and, crucially, situational safety reasoning. 
-Our findings reveal that current MLLMs struggle with this nuanced safety problem in the instruction-following setting and struggle to tackle these situational safety challenges all at once, highlighting a key area for future research. 
-Furthermore, we develop multi-agent pipelines to coordinately solve safety challenges, which shows consistent improvement in safety over the original MLLM response.
+           Recent advancements in multimodal large language models (MLLMs) have significantly improved performance in visual question answering. However, they often suffer from hallucinations. In this work, hallucinations are categorized into two main types: initial hallucinations and snowball hallucinations. We argue that adequate contextual information can be extracted directly from the token interaction process. Inspired by causal inference in decoding strategy, we propose to leverage causal masks to establish information propagation between multimodal tokens. The hypothesis is that insufficient interaction between those tokens may lead the model to rely on outlier tokens, overlooking dense and rich contextual cues. Therefore, we propose to intervene in the propagation process by tackling outlier tokens to enhance in-context inference. With this goal, we present FarSight, a versatile plug-and-play decoding strategy to reduce attention interference from outlier tokens merely by optimizing the causal mask. The heart of our method is effective token propagation. We design an attention register structure within the upper triangular matrix of the causal mask, dynamically allocating attention capture attention diverted to outlier tokens. Moreover, a positional awareness encoding method with a diminishing masking rate is proposed, allowing the model to attend to further preceding tokens, especially for video sequence tasks. With extensive experiments, FarSight demonstrates significant hallucination-mitigating performance across different MLLMs on both image and video benchmarks, proving its effectiveness.
           </p>
         </div>
       </div>
     </div>
 
+    <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+      <div class="column is-four-fifths">
+      <h2 class="title is-3">Methodology</h2>
+      </div>
+      </div>
 
+
+   <div class="columns is-centered has-text-centered" style="margin-top: 0rem;">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Visualization</h2>
+  </div>
+</div>
+
+<section class="section" style="margin-top: -2.6rem;">
+  <figure class="image is-centered" style="width: 80%; margin: 0 auto 1rem; text-align: center;">
+    <img 
+      src="./static/table1.png" 
+      alt="image" 
+      style="width: 100%; height: auto;" 
+      loading="lazy"
+    />
+    <figcaption style="text-align: center;">
+      Table 1. Accuracy of MLLMs under instruction following setting. All of the MLLMs struggle to respond with safety awareness under unsafe situations and perform even worse in Embodied Task.
+    </figcaption>
+  </figure>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container content" style="max-width: 800px; margin: 0 auto;">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      
+    </code></pre>
+  </div>
+</section>
 
 </body>
 </html>
