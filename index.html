@@ -228,7 +228,7 @@
   </div>
 </section>
 
-<section class="section" style="margin-top: -2.6rem;">
+<!-- <section class="section" style="margin-top: -2.6rem;">
   <figure class="image is-centered" style="width: 60%; margin: 0 auto 1rem; text-align: center;">
     <img 
       src="./static/images/intro.png" 
@@ -240,7 +240,7 @@
       (a): Attention Collapse in MLLMs: Outlier tokens from different modalities are assigned disproportionately high attention scores, hindering interaction between relevant tokens. (b): Positional Information Decay: As text generation progresses, attention to visual information gradually diminishes. (c): Our FarSight, as a plug-in, mitigates these issues by effectively reducing attention interference from outlier tokens and improving response accuracy.
     </figcaption>
   </figure>
-</section>
+</section> -->
 
   
  <div class="container is-max-desktop">
@@ -278,7 +278,7 @@
 </section> -->
 
   <section class="section" style="margin-top: -2.6rem;">
-  <figure class="image is-centered" style="width: 80%; margin: 0 auto 1rem; text-align: center;">
+  <figure class="image is-centered" style="width: 120%; margin: 0 auto 1rem; text-align: center;">
     <img 
       src="./static/images/method.png" 
       alt="image" 
@@ -286,7 +286,9 @@
       loading="lazy"
     />
     <figcaption style="text-align: center;">
-      The scheme of the proposed <strong>FarSight</strong> strategy, which integrates with the <strong>softmax</strong> operation, replaces the traditional causal mask. Specifically, the attention score matrix \( \omega \) is cleared of attention values in the upper triangular part, then register-attention scores are added using the matrix \( \mathcal{P} \), followed by the softmax computation. \( \mathcal{P} \) has a linear decay in the upper triangular part and zeros in the lower triangular part. After the softmax operation, the remaining attention probabilities in the upper triangular part are cleared to ensure the causal decoding property is preserved.
+      The overview of proposed ScaleNoise, which improves long video generation through inference-time search, replaces the training-time scaling.
+Specailly, our strategy mitigates this by conducting a tailored step-by-step beam search for suitable initial noise, guided by a reward model that incorporates an anchor frame to ensure a long-term signal.
+At each step, we perform one-step denoising on candidate noises to obtain a clearer clip for evaluation; the reward model then predicts the long-term value of each candidate, helping avoid noise that could introduce future inconsistencies.
     </figcaption>
   </figure>
 </section>
@@ -299,7 +301,7 @@
   </div>
 </div>
 
-<section class="section" style="margin-top: -2.6rem;">
+<!-- <section class="section" style="margin-top: -2.6rem;">
   <figure class="image is-centered" style="width: 120%; margin: 0 auto 1rem; text-align: center;">
     <img 
       src="./static/images/exp.png" 
@@ -311,7 +313,7 @@
      Qualitative Visualization of FarSight in Image Understanding Task on LLaVA-1.5. (a) Comparison of the average attention allocation to images during text generation among Base (Vanilla MLLMs), EDVT and our FarSight; (b) Visual attention decay across different methods within the generation of 60 text tokens; (c) FarSight's attention distribution on images under varying decay rat $\sigma$. More detailed visualizations of images and videos are provided in Appendix F.
     </figcaption>
   </figure>
-</section>
+</section> -->
 
 <section class="section" id="BibTeX">
   <div class="container content" style="max-width: 800px; margin: 0 auto;">
