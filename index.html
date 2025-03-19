@@ -93,29 +93,32 @@
           <h1 class="title is-1 publication-title">Seeing Far and Clearly: Mitigating Hallucinations in MLLMs with Attention Causal Decoding</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="">Haolin Yang*</a><sup>1</sup>,</span>
+              <a href="">Haolin Yang*</a><sup>1,3</sup>,</span>
             <span class="author-block">
-              <a href="">Feilong Tang*</a><sup>2</sup>,</span>
+              <a href="">Feilong Tang*</a><sup>1,2,3</sup>,</span>
             <span class="author-block">
-              <a href="">Ming Hu</a><sup>1</sup>,
+              <a href="">Ming Hu</a><sup>1,2,3</sup>,
             </span>
             <span class="author-block">
-              <a href="">Yulong Li</a><sup>1</sup>,
+              <a href="">Yulong Li</a><sup>1,3</sup>,
             </span>
             <span class="author-block">
-              <a href="">Junjie Guo</a><sup>2</sup>,
+              <a href="">Junjie Guo</a><sup>4</sup>,
+            </span>
+             <span class="author-block">
+              <a href="">Yexin Liu</a><sup>5</sup>,
             </span>
             <span class="author-block">
-              <a href="">Zelin Peng</a><sup>2</sup>,
+              <a href="">Zelin Peng</a><sup>6</sup>,
             </span>
             <span class="author-block">
               <a href="">Junjun He</a><sup>3</sup>
             </span>
             <span class="author-block">
-              <a href="">Zongyuan Ge†</a><sup>4</sup>
+              <a href="">Zongyuan Ge†</a><sup>2</sup>
             </span>
             <span class="author-block">
-              <a href="">Imran Razzak†</a><sup>5</sup>
+              <a href="">Imran Razzak†</a><sup>1</sup>
 <!--             </span>
             <span class="author-block">
               <a href="">Sijin Zhou</a><sup>1</sup>
@@ -158,10 +161,10 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>MBZUAI</span>
             <span class="author-block"><sup>2</sup>Monash University</span>
-            <span class="author-block"><sup>2</sup>Shanghai AI Lab</span>
-            <span class="author-block"><sup>2</sup>Nanjing Universityty</span>
-            <span class="author-block"><sup>2</sup>HKUST</span>
-            <span class="author-block"><sup>2</sup>Shanghai Jiaotong University</span>
+            <span class="author-block"><sup>3</sup>Shanghai AI Lab</span>
+            <span class="author-block"><sup>4</sup>Nanjing Universityty</span>
+            <span class="author-block"><sup>5</sup>HKUST</span>
+            <span class="author-block"><sup>6</sup>Shanghai Jiaotong University</span>
 <!--             <span class="author-block"><sup>2</sup>Cornell University</span>
             <span class="author-block"><sup>2</sup>University of New South Wales</span> -->
           </div>
@@ -247,7 +250,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-           Recent advancements in multimodal large language models (MLLMs) have significantly improved performance in visual question answering. However, they often suffer from hallucinations. In this work, hallucinations are categorized into two main types: initial hallucinations and snowball hallucinations. We argue that adequate contextual information can be extracted directly from the token interaction process. Inspired by causal inference in decoding strategy, we propose to leverage causal masks to establish information propagation between multimodal tokens. The hypothesis is that insufficient interaction between those tokens may lead the model to rely on outlier tokens, overlooking dense and rich contextual cues. Therefore, we propose to intervene in the propagation process by tackling outlier tokens to enhance in-context inference. With this goal, we present FarSight, a versatile plug-and-play decoding strategy to reduce attention interference from outlier tokens merely by optimizing the causal mask. The heart of our method is effective token propagation. We design an attention register structure within the upper triangular matrix of the causal mask, dynamically allocating attention capture attention diverted to outlier tokens. Moreover, a positional awareness encoding method with a diminishing masking rate is proposed, allowing the model to attend to further preceding tokens, especially for video sequence tasks. With extensive experiments, FarSight demonstrates significant hallucination-mitigating performance across different MLLMs on both image and video benchmarks, proving its effectiveness.
+           Video diffusion models (VDMs) facilitate the generation of high-quality videos, with current research predominantly concentrated on scaling efforts during training through improvements in data quality, computational resources, and model complexity. However, inference-time scaling has received less attention, with most approaches restricting models to a single generation attempt. Recent studies have uncovered the existence of “golden noise" that can enhance video quality during generation. Building on this, we find that guiding the scaling inference-time search of VDMs to identify better noise candidates not only evaluates the quality of the frames generated in the current step but also preserves the high-level object features by referencing the anchor frame from previous multi-chunks, thereby delivering long-term value. Our analysis reveals that diffusion models inherently possess flexible adjustments of computation by varying denoising steps, and even a one-step denoising approach, when guided by a reward signal, yields significant long-term benefits. Based on the observation, we propose ScalingNoise, a plug-and-play inference-time search strategy that identifies golden initial noise for the diffusion sampling process to improve global content consistency and visual diversity. Specifically, we perform one-step denoising to convert initial noise into a clip and subsequently evaluate its long-term value, leveraging a reward model anchored by previously generated content. Moreover, to preserve diversity, we sample candidates from a tilted noise distribution that up-weights promising noises. In this way, ScalingNoise significantly reduces noise-induced errors, ensuring more coherent and spatiotemporally consistent video generation. Extensive experiments on benchmark datasets demonstrate that the proposed ScalingNoise effectively improves both content fidelity and subject consistency for resource-constrained long video generation.
           </p>
         </div>
       </div>
