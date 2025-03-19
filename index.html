@@ -286,7 +286,7 @@
       loading="lazy"
     />
     <figcaption style="text-align: center;">
-      The overview of proposed ScaleNoise, which improves long video generation through inference-time search, replaces the training-time scaling.
+      The overview of proposed method, ScalingNoise, which improves long video generation through inference-time search, replaces the training-time scaling.
 Specailly, our strategy mitigates this by conducting a tailored step-by-step beam search for suitable initial noise, guided by a reward model that incorporates an anchor frame to ensure a long-term signal.
 At each step, we perform one-step denoising on candidate noises to obtain a clearer clip for evaluation; the reward model then predicts the long-term value of each candidate, helping avoid noise that could introduce future inconsistencies.
     </figcaption>
